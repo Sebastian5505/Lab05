@@ -1,0 +1,134 @@
+:root {
+  --primary-color: #1e40af;
+  --primary-hover: #1e3a8a;
+  --bg-color: #f8fafc;
+  --surface-color: #ffffff;
+  --text-main: #0f172a;
+  --border-color: #475569;
+  --focus-ring: #2563eb;
+  --danger-color: #991b1b;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  margin: 0;
+  padding: var(--spacing-lg);
+  line-height: 1.5;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Un solo h1 en el documento */
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--text-main);
+  margin-bottom: var(--spacing-lg);
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.form-group {
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-main);
+}
+
+input, textarea {
+  padding: 12px;
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: var(--surface-color);
+  color: var(--text-main);
+}
+
+/* Foco visible para navegación por teclado (Tab/Enter) */
+input:focus-visible, textarea:focus-visible, button:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+/* Botones accesibles: mínimo 44px de alto (Ley de Fitts y WCAG) */
+button {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: #ffffff; /* Contraste > 4.5:1 */
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.notes-grid {
+  display: grid;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.note-card {
+  background-color: var(--surface-color);
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.btn-delete {
+  background-color: var(--danger-color);
+  margin-top: var(--spacing-sm);
+  align-self: flex-start;
+}
+
+/* Notificación emergente */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #0f172a;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.btn-undo {
+  background-color: #f59e0b;
+  color: #000000;
+  padding: 6px 12px;
+  min-height: 36px;
+}

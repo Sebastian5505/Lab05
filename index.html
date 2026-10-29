@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App de Notas Accesible</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <header>
+    <h1>Gestor de Notas Accesible</h1>
+  </header>
+
+  <main>
+    <section class="form-container">
+      <h2>Nueva Nota</h2>
+      <form id="note-form" novalidate>
+        <div class="form-group">
+          <label for="note-title">Título de la nota</label>
+          <input type="text" id="note-title" placeholder="Ej. Compras de la semana" required>
+        </div>
+
+        <div class="form-group">
+          <label for="note-content">Contenido de la nota</label>
+          <textarea id="note-content" rows="4" placeholder="Ej. Leche, pan, frutas..." required></textarea>
+        </div>
+
+        <button type="submit" id="save-btn" disabled>Guardar nota</button>
+      </form>
+    </section>
+
+    <section class="notes-container">
+      <h2>Mis Notas</h2>
+      <div id="notes-list" class="notes-grid"></div>
+    </section>
+  </main>
+
+  <!-- Notificación Toast para feedback y opción de deshacer -->
+  <div id="toast" class="toast hidden" role="status" aria-live="polite">
+    <span id="toast-message"></span>
+    <button id="undo-btn" class="btn-undo hidden">Deshacer</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
